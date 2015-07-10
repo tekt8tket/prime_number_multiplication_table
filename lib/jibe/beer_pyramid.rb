@@ -7,12 +7,11 @@
 class Jibe::BeerPyramid
 
   def self.levels(num_beers)
-    level_num = 1
+    level_num = 0
 
     while(num_beers > 0) do
-      num_beers -= (level_num**2)
-      level_num += 1 if num_beers > 0
-      level_num -= 1 if num_beers < 0
+      num_beers -= ((level_num + 1)**2)
+      level_num += 1 if num_beers >= 0
     end
 
     level_num
